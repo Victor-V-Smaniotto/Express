@@ -13,33 +13,26 @@
 
     <nav>
         <a href="index.html">Lista de Filmes</a>
-        |
         <a href="cadastro.html">Cadastrar Filme</a>
     </nav>
-
     <br>
-
     <label for="busca">Buscar por título:</label>
     <input
         type="text"
         id="busca"
         placeholder="Digite o título"
     >
-
     <br><br>
 
     <label for="genero">Gênero:</label>
-
     <select id="genero">
         <option value="">Todos</option>
     </select>
-
     <br><br>
 
     <p id="mensagem"></p>
 
     <table border="1">
-
         <thead>
             <tr>
                 <th>Título</th>
@@ -56,7 +49,6 @@
     </table>
 
     <script>
-
         let filmes = [];
 
         const tabela = document.getElementById('tabela-filmes');
@@ -71,7 +63,6 @@
             lista.forEach(filme => {
 
                 const linha = document.createElement('tr');
-
                 let cor;
 
                 if (Number(filme.nota) >= 9) {
@@ -106,9 +97,7 @@
         }
 
         async function carregarFilmes(url = '/api/filmes') {
-
             try {
-
                 const resposta = await fetch(url);
 
                 const resultado = await resposta.json();
@@ -118,7 +107,6 @@
                 }
 
                 filmes = resultado;
-
                 mostrarFilmes(filmes);
 
             } catch (erro) {
